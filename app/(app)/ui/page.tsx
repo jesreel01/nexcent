@@ -1,9 +1,10 @@
 import Button from "@/components/button";
+import IconButton from "@/components/icon-button";
 import { Mail } from "lucide-react";
 
-export default function Home() {
+export default function IndexPage() {
   return (
-    <main className="">
+    <div className="container">
       <p>Main Colors</p>
       <div className="flex space-x-2">
         <div className="bg-primary w-10 h-10"></div>
@@ -15,12 +16,16 @@ export default function Home() {
         <div className="bg-neutral-black w-10 h-10"></div>
         <div className="bg-secondary w-10 h-10"></div>
         <div className="bg-info w-10 h-10"></div>
+        <div className="bg-info w-10 h-10"></div>
+        <div className="bg-info w-10 h-10"></div>
+        <div className="bg-info w-10 h-10"></div>
+        <div className="bg-info w-10 h-10"></div>
       </div>
       Sample Home Page
-      <h1 className="text-re">Headline 1</h1>
-      <h2>Headline 2</h2>
-      <h3>Headline 3</h3>
-      <h4>Headline 4</h4>
+      <h1 className="text-h1">Headline 1</h1>
+      <h2 className="text-h2">Headline 2</h2>
+      <h3 className="text-h3">Headline 3</h3>
+      <h4 className="text-h4">Headline 4</h4>
       {/* <p className="text-body-4">Sample text</p> */}
       <p className="text-body-4 font-normal">Sample text</p>
       <p className="text-body-m-4 font-bold">Sample text</p>
@@ -70,6 +75,43 @@ export default function Home() {
           Medium
         </Button>
       </div>
-    </main>
+      <br />
+      <p>Icon Button Primary</p>
+      <div className="flex space-x-2">
+        <IconButton variant="primary" size="small">
+          <Mail className="h-4 w-4" />
+        </IconButton>
+        <IconButton variant="primary" size="medium">
+          <Mail className="h-5 w-5" />
+        </IconButton>
+        <IconButton variant="primary" size="large">
+          <Mail className="h-6 w-6" />
+        </IconButton>
+      </div>
+      <p>Icon Button Secondary</p>
+      <div className="flex space-x-2">
+        <IconButton variant="secondary" size="small">
+          <Mail className="h-4 w-4" />
+        </IconButton>
+        <IconButton variant="secondary" size="medium">
+          <Mail className="h-5 w-5" />
+        </IconButton>
+        <IconButton variant="secondary" size="large">
+          <Mail className="h-6 w-6" />
+        </IconButton>
+      </div>
+      <p>Icon Button Tertiary</p>
+      <div className="flex space-x-2">
+        <IconButton variant="tertiary" size="small">
+          <Mail className="h-4 w-4" />
+        </IconButton>
+        <IconButton variant="tertiary" size="medium">
+          <Mail className="h-5 w-5" />
+        </IconButton>
+        <IconButton variant="tertiary" size="large">
+          <Mail className="h-6 w-6" />
+        </IconButton>
+      </div>
+      </div>
   );
 }

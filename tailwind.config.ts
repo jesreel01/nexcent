@@ -1,5 +1,11 @@
+import { CSSProperties } from "react";
 import type { Config } from "tailwindcss";
-const plugin = require("tailwindcss/plugin");
+import plugin from "tailwindcss/plugin";
+import { CSSRuleObject } from "tailwindcss/types/config";
+
+interface CustomUtilities {
+  [key: string]: CSSProperties;
+}
 
 const config: Config = {
   content: [
@@ -11,7 +17,7 @@ const config: Config = {
   theme: {
     extend: {
       fontFamily: {
-        sans: ['var(--font-inter)'],
+        sans: ["var(--font-inter)"],
       },
       colors: {
         primary: "#4CAF4F",
@@ -52,8 +58,8 @@ const config: Config = {
     },
   },
   plugins: [
-    plugin(function ({ addUtilities }: any) {
-      const newUtilities = {
+    plugin(function ({ addUtilities }) {
+      const newUtilities: CustomUtilities = {
         ".text-body-1": {
           fontSize: "18px",
           lineHeight: "28px",
@@ -81,18 +87,39 @@ const config: Config = {
           fontWeight: 500,
         },
         ".text-body-m-3": {
-          fontSize: "14px",
+          fontSize: "13px",
           lineHeight: "20px",
           fontWeight: 500,
         },
         ".text-body-m-4": {
           fontSize: "12px",
           lineHeight: "16px",
-          fontWeight: 500,
+          fontWeight: 450,
+        },
+        // H1, H2, H3, H4
+        ".text-h1": {
+          fontSize: "64px",
+          lineHeight: "76px",
+          fontWeight : 600
+        },
+        ".text-h2": {
+          fontSize: "36px",
+          lineHeight: "44px",
+          fontWeight : 500
+        },
+        ".text-h3": {
+          fontSize: "28px",
+          lineHeight: "36px",
+          fontWeight : 650
+        },
+        ".text-h4": {
+          fontSize: "20px",
+          lineHeight: "28px",
+          fontWeight : 500
         },
       };
 
-      addUtilities(newUtilities, ["responsive", "hover"]);
+      addUtilities(newUtilities as any);
     }),
   ],
 };
